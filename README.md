@@ -1,13 +1,13 @@
-### Storefront
+## Storefront
 
-1. npm install
+```npm install```
 
-Running app against the real API:
+#### Running app against the real API:
 
 1. npm start
-2. go to localhost:8080
+2. go to [localhost:8080](http://localhost:8080)
 
-Running the tests:
+#### Running the tests:
 
 1. npm run start:test
 2. npm run mockserver
