@@ -45,6 +45,8 @@ class Details extends React.Component {
   _averageRating(Reviews) {
     if (!Reviews) return null;
 
+    if (Reviews.length == 1) return Reviews[0].Rating
+
     const totalRating = Reviews.reduce((prev, curr) => prev.Rating + curr.Rating);
     return totalRating / Reviews.length
   }
