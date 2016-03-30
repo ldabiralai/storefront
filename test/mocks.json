@@ -1,0 +1,102 @@
+[
+  {
+    "path": "/api/products",
+    "response":  [
+      {
+        "Id": 101,
+        "Name": "Black",
+        "ImageName": "black.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/black.jpg",
+        "PriceDecimal": 100
+      },
+      {
+        "Id": 102,
+        "Name": "Black and White",
+        "ImageName": "black_and_white.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/black_and_white.jpg",
+        "PriceDecimal": 120
+      },
+      {
+        "Id": 103,
+        "Name": "Cartoon",
+        "ImageName": "cartoon.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/cartoon.jpg",
+        "PriceDecimal": 30
+      },
+      {
+        "Id": 104,
+        "Name": "Ginger",
+        "ImageName": "ginger.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/ginger.jpg",
+        "PriceDecimal": 80
+      },
+      {
+        "Id": 106,
+        "Name": "Group of kittens",
+        "ImageName": "group.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/group.jpg",
+        "PriceDecimal": 300
+      },
+      {
+        "Id": 107,
+        "Name": "Grumpy",
+        "ImageName": "grumpy.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/grumpy.jpg",
+        "PriceDecimal": 10
+      },
+      {
+        "Id": 108,
+        "Name": "Kitten",
+        "ImageName": "kitten.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/kitten.jpg",
+        "PriceDecimal": 90
+      },
+      {
+        "Id": 110,
+        "Name": "Pair of kittens",
+        "ImageName": "pair.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/pair.jpg",
+        "PriceDecimal": 115
+      },
+      {
+        "Id": 111,
+        "Name": "Playful",
+        "ImageName": "playful.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/playful.jpg",
+        "PriceDecimal": 140
+      },
+      {
+        "Id": 112,
+        "Name": "White",
+        "ImageName": "white.jpg",
+        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/white.jpg",
+        "PriceDecimal": 70
+      }
+    ]
+  },
+  {
+    "path": "/api/products/101",
+    "response": {
+      "Description": "A classic black cat who may bring luck to those who buy her.",
+      "Reviews": [
+        {
+          "Id": 1001,
+          "Rating": 5,
+          "Reviewer": "luckyguy",
+          "Description": "The best feline purchase I ever made"
+        },
+        {
+          "Id": 1002,
+          "Rating": 4,
+          "Reviewer": "mostly lucky",
+          "Description": "You need to get this cat!"
+        }
+      ],
+      "Id": 101,
+      "Name": "Black",
+      "ImageName": "black.jpg",
+      "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/black.jpg",
+      "PriceDecimal": 100
+    }
+  }
+]
