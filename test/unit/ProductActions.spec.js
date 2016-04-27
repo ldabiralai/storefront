@@ -9,11 +9,23 @@ const mockStore = configureStore([thunk]);
 describe('actions', () => {
   beforeEach(() => nock.cleanAll());
   
-  it('fetch and set product', () => {
+  it('fetch and set products', () => {
     const response = [{ "Id": 1 }];
     const expected = [{ type: 'SET_PRODUCTS', products: response }];
 
     nock('http://localhost:7001').get('/api/products').reply(200, response);
+    const store = mockStore({});
+
+    return store.dispatch(productActions.fetchProducts())
+      .then(() => {
+        expect(store.getActions()).to.deep.equal(expected);
+      });
+  });
+
+  it('fetch and set products error', () => {
+    const expected = [{ type: 'SET_PRODUCTS_ERROR' }];
+
+    nock('http://localhost:7001').get('/api/products').reply(503);
     const store = mockStore({});
 
     return store.dispatch(productActions.fetchProducts())
@@ -35,6 +47,16 @@ describe('actions', () => {
       });
   });
 
+  it('fetch and set products details error', () => {
+    const expected = [{ type: 'SET_PRODUCT_DETAILS_ERROR' }];
 
+    nock('http://localhost:7001').get('/api/products/101').reply(503);
+    const store = mockStore({});
+
+    return store.dispatch(productActions.fetchProductDetails(101))
+      .then(() => {
+        expect(store.getActions()).to.deep.equal(expected);
+      });
+  });
 
 });
