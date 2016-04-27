@@ -10,18 +10,10 @@ describe('actions', () => {
   beforeEach(() => nock.cleanAll());
   
   it('fetch and set product', () => {
-    const response = [
-      {
-        "Id": 101,
-        "Name": "Black",
-        "ImageName": "black.jpg",
-        "ImageUrl": "http://frontenddevinterview.azurewebsites.net/Images/black.jpg",
-        "PriceDecimal": 100
-      }
-    ];
-    nock('http://localhost:7001').get('/api/products').reply(200, response);
-
+    const response = [{ "Id": 1 }];
     const expected = [{ type: 'SET_PRODUCTS', products: response }];
+
+    nock('http://localhost:7001').get('/api/products').reply(200, response);
     const store = mockStore({});
 
     return store.dispatch(productActions.fetchProducts())
@@ -32,9 +24,9 @@ describe('actions', () => {
 
   it('fetch and set product details', () => {
     const response = { "Description": "A classic black cat who may bring luck to those who buy her." };
-    nock('http://localhost:7001').get('/api/products/101').reply(200, response);
-
     const expected = [{ type: 'SET_PRODUCT_DETAILS', details: response }];
+
+    nock('http://localhost:7001').get('/api/products/101').reply(200, response);
     const store = mockStore({});
 
     return store.dispatch(productActions.fetchProductDetails(101))

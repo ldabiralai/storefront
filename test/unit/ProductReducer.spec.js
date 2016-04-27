@@ -12,18 +12,13 @@ describe('productReducer', () => {
   }];
   
   it('sets the products correctly', () => {
-    const action = {
-      type: 'SET_PRODUCTS',
-      products 
-    } 
+    const action = { type: 'SET_PRODUCTS', products }; 
 
     expect(productReducer(undefined, action)).to.deep.equal({products, loading: false})
   });
 
   it('sets product error correctly', () => {
-    const action = {
-      type: 'SET_PRODUCTS_ERROR'
-    } 
+    const action = { type: 'SET_PRODUCTS_ERROR' };
 
     expect(productReducer(undefined, action)).to.deep.equal({loading: true, error: true})
   });
@@ -47,10 +42,7 @@ describe('productReducer', () => {
       ],
       "Id": 101
     };
-    const action = {
-      type: 'SET_PRODUCT_DETAILS',
-      details
-    } 
+    const action = { type: 'SET_PRODUCT_DETAILS', details };
 
     const result = productReducer({products, loading: false}, action);
 
@@ -59,17 +51,13 @@ describe('productReducer', () => {
   });
 
   it('sets product details error correctly', () => {
-    const action = {
-      type: 'SET_PRODUCT_DETAILS_ERROR'
-    };
+    const action = { type: 'SET_PRODUCT_DETAILS_ERROR' };
 
     expect(productReducer(undefined, action)).to.deep.equal({loading: true, error: true});
   });
 
   it('returns state if no action type', () => {
-    const state = {
-      loading: true
-    };
+    const state = { loading: true };
 
     expect(productReducer(undefined, {})).to.deep.equal(state);
   });
