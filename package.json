@@ -7,9 +7,9 @@
     "node": ">=5.2.0"
   },
   "scripts": {
-    "test": "npm run test:unit && npm run test:functional",
-    "test:unit": "mocha --recursive test/unit --require babel-core/register",
-    "test:functional": "cucumber-js test/functional --compiler js:babel-core/register",
+    "test": "NODE_ENV=dev npm run test:unit && npm run test:functional",
+    "test:unit": "NODE_ENV=dev mocha --recursive test/unit --require babel-core/register",
+    "test:functional": "NODE_ENV=dev cucumber-js test/functional --compiler js:babel-core/register",
     "mockserver": "simulado",
     "start": "NODE_ENV=prod webpack-dev-server --content-base dist/ --history-api-fallback",
     "start:test": "NODE_ENV=dev webpack-dev-server --content-base dist/ --history-api-fallback"
@@ -28,8 +28,10 @@
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "mocha": "^2.3.4",
+    "nock": "^8.0.0",
     "node-sass": "^3.4.2",
     "react-addons-test-utils": "^0.14.8",
+    "redux-mock-store": "^1.0.2",
     "redux-thunk": "^2.0.1",
     "sass-loader": "^3.1.2",
     "simulado": "^2.1.1",

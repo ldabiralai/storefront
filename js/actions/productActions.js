@@ -29,7 +29,7 @@ function setProductDetailsError() {
 
 export function fetchProducts() {
   return (dispatch) => {
-    api.get(config.endpoint)
+    return api.get(config.endpoint)
      .then((res) => dispatch(setProducts(res.data))) 
      .catch((res) => dispatch(setProductsError()))
   }
@@ -37,7 +37,7 @@ export function fetchProducts() {
 
 export function fetchProductDetails(id) {
   return (dispatch) => {
-    api.get(`${config.endpoint}/${id}`)
+    return api.get(`${config.endpoint}/${id}`)
      .then((res) => dispatch(setProductDetails(res.data))) 
      .catch((res) => dispatch(setProductDetailsError()))
   }
